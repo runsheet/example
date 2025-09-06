@@ -18,11 +18,11 @@ jobs:
 
       - name: Setup auth
         id: setup_auth
-        uses: runsheet/auth-action@v0.1.4
+        uses: runsheet/auth-action@v0.1.5
 
       - name: Echo auth outputs
         run: |
           echo "status: ${{ steps.setup_auth.outputs.status }}"
-          echo "token: ${{ steps.setup_auth.outputs.token }}
+          echo "token: ${{ steps.setup_auth.outputs.token }}"
           echo "username: ${{ steps.setup_auth.outputs.username }}"
           echo "repo: ${{ steps.setup_auth.outputs.repo }}"
