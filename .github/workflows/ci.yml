@@ -18,7 +18,7 @@ jobs:
 
       - name: Setup auth
         id: setup_auth
-        uses: runsheet/auth-action@v0.1.3
+        uses: runsheet/auth-action@v0.1.4
 
       - name: Echo auth outputs
         run: |
