@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup auth
+        id: setup_auth
+        uses: runsheet/auth-action@v0.1.0
+
+      - name: Echo auth outputs
+        run: |
+          echo "status: ${{ steps.setup_auth.outputs.status }}"
+          echo "token: ${{ steps.setup_auth.outputs.token }}
+          echo "username: ${{ steps.setup_auth.outputs.username }}"
+          echo "repo: ${{ steps.setup_auth.outputs.repo }}"
